@@ -30,8 +30,8 @@ class CosS3Client:
         self._close_handler = None
         
     def _get_url(self, bucket, key=''):
-        Key = Key.lstrip('/')
-        url = 'https://%s.cos.%s.myqcloud.com/%s'%(Bucket, self._config.region, Key)
+        key = key.lstrip('/')
+        url = 'https://%s.cos.%s.myqcloud.com/%s'%(bucket, self._config.region, key)
         return url
 
     async def _parser(self, resp):
